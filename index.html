@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>XYZ Dashboard</title>
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <h1>XYZ Dashboard</h1>
+      <p class="subtitle">Sample data · <span id="range-label">last 30 days</span></p>
+    </div>
+    <div class="controls">
+      <div class="segmented" role="group" aria-label="Date range">
+        <button type="button" data-range="7">7D</button>
+        <button type="button" data-range="30" aria-pressed="true">30D</button>
+        <button type="button" data-range="90">90D</button>
+      </div>
+      <button type="button" id="theme-toggle" class="icon-btn" aria-label="Toggle dark mode">◐</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="kpis" id="kpis" aria-label="Key metrics"></section>
+
+    <section class="grid">
+      <article class="card wide">
+        <header class="card-head">
+          <div>
+            <h2>Daily active users</h2>
+            <p class="card-sub">By platform</p>
+          </div>
+          <ul class="legend" id="dau-legend"></ul>
+        </header>
+        <div class="chart" id="dau-chart"></div>
+        <details class="table-view">
+          <summary>View as table</summary>
+          <div id="dau-table"></div>
+        </details>
+      </article>
+
+      <article class="card">
+        <header class="card-head">
+          <div>
+            <h2>Revenue by region</h2>
+            <p class="card-sub">Current period</p>
+          </div>
+        </header>
+        <div class="chart" id="region-chart"></div>
+        <details class="table-view">
+          <summary>View as table</summary>
+          <div id="region-table"></div>
+        </details>
+      </article>
+
+      <article class="card">
+        <header class="card-head">
+          <div>
+            <h2>Recent orders</h2>
+            <p class="card-sub">Latest 8</p>
+          </div>
+        </header>
+        <div class="table-wrap" id="orders"></div>
+      </article>
+    </section>
+  </main>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>
